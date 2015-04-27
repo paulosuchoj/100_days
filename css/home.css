@@ -39,6 +39,8 @@ header{
 	color: #FFF;
 	margin: auto;
 	display: block;
+	margin: auto;
+	top: 1.2em;
 }
 
 .header-subtitle{
@@ -46,6 +48,8 @@ header{
 	color: #FFF;
 	display: block;
 	font-size: 1.8em;
+	position: relative;
+	top: 0.4em;
 }
 
 hr{
@@ -60,16 +64,22 @@ hr{
 .header-desc{
 	font-family: 'Titillium Web', sans-serif;
 	color: #FFF;
+	display: block;
 	margin-top: 20px;
 	font-size: 1.4em;
 	font-weight: 100;
 }
 
 .header-desc--bg{
+  top: 2em; left: 0; bottom: 2em; right: 0;
 	background: rgba(0, 0, 0, 0.2);
 	padding: 6px;
 	border-radius: 3px;
 	margin: 2em;
+}
+
+.clear{
+	clear: both;
 }
 
 .jap-cubes{

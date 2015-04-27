@@ -1,5 +1,6 @@
 *{
 	font-family: 'Roboto', sans-serif;
+	clear: both;
 }
 
 body{
@@ -20,21 +21,17 @@ h1{
 	color: #2c63ba;
 }
 
-.header{
-	background: white;
-}
-
 #mainContainer{
 	width: 100px;
 	text-align: center;
 }
 
 #circleMenu{
-	width: 500px;
-	height: 500px;
+	width: 600px;
+	height: 600px;
 	margin: auto;
 	position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 12em; left: 0; bottom: 0; right: 0;
 }
 
 #circleMenu img{
@@ -56,13 +53,34 @@ h1{
 }
 
 #infoBalloon b{
-	font-size: 1em;
+	font-size: 1.4em;
 }
 
 #infoBalloon p{
 	margin: 1em;
+	font-size: 1.2em;
 }
 
-.bs-example{
-	margin: 150px 50px 50px;
+footer{
+	position: fixed;
+	bottom: 0px;
+	display: inline-block;
+	padding: 12px 20px;
+	background: rgba(0,0,0,0.1);
+	border-radius: 6px;
+}
+
+#home{
+	border-left: 16px solid #4676DA;
+}
+
+#blog{
+	border-left: 16px solid #454db2;
+}
+
+footer a:link{
+	color: #000;
+	text-decoration: none;
+	margin-right: 6px;
+	padding-left: 6px;
 }

@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	//Arrange the icons in a circle centered in the div
 	numItems = $( "#circleMenu img" ).length; //How many items are in the circle?
-	start = 0.25; //the angle to put the first image at. a number between 0 and 2pi
+	start = 0.3; //the angle to put the first image at. a number between 0 and 2pi
 	step = (2*Math.PI)/numItems; //calculate the amount of space to put between the items.
 
 	//Now loop through the buttons and position them in a circle

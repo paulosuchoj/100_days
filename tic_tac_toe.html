@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<!--CSS-->
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="css/tic_tac_toe.css" rel="stylesheet">
+
+		<!--Scripts-->
+		<script type="text/javascript">
+			var casaPintada;
+			var simboloCasa;
+			var combinacoesVitoria;
+			var turno = 0;
+			var canvasAtual;
+			var casa;
+			var contextoCasa;
+			var casasPrenchidas = 0;
+			var novoJogo;
+
+			window.onload = function() {
+				casaPintada = new Array();
+				simboloCasa = new Array();
+				combinacoesVitoria = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+
+				for(var i = 0; i <= 8; i++){
+					casaPintada[i] = false;
+					simboloCasa[i] = '';
+				}
+			}
+
+			function casaClicada(numCasa) {
+				canvasAtual = "cvs" + numCasa;
+				casa = document.getElementById(canvasAtual);
+
+				contextoCasa = casa.getContext("2d");
+				contextoCasa.lineWidth = 6;
+
+				if(casaPintada[numCasa - 1] == false){
+					if(turno%2==0){
+						contextoCasa.beginPath();
+
+						contextoCasa.moveTo(10, 10);
+						contextoCasa.lineTo(90, 90);
+
+						contextoCasa.moveTo(90, 10);
+						contextoCasa.lineTo(10, 90);
+
+						contextoCasa.strokeStyle = "#FF0000";
+						contextoCasa.stroke();
+						contextoCasa.closePath();
+
+						simboloCasa[numCasa - 1] = 'X';
+					}else{
+						contextoCasa.beginPath();
+
+						contextoCasa.arc(50, 50, 45, 0, Math.PI * 2, true);
+
+						contextoCasa.strokeStyle = "#0000FF";
+						contextoCasa.stroke();
+						contextoCasa.closePath();
+
+						simboloCasa[numCasa - 1] = 'O';
+					}
+
+					turno++;
+					casaPintada[numCasa - 1] = true;
+					casasPrenchidas++;
+
+					verificarGanhadores(simboloCasa[numCasa - 1]);
+
+					if(casasPrenchidas == 9){
+						alert("THE GAME IS OVER!");
+						location.reload(true);
+					}
+				}else{
+					alert("THAT SPACE IS ALREADY OCCUPIED");
+				}
+			}
+
+			function verificarGanhadores(simbolo) {
+				for(var j = 0; j < combinacoesVitoria.length; j++){
+					if(simboloCasa[combinacoesVitoria[j][0]] == simbolo &&
+						 simboloCasa[combinacoesVitoria[j][1]] == simbolo &&
+						 simboloCasa[combinacoesVitoria[j][2]] == simbolo){
+						alert(simbolo + " WON! CONGRATULATIONS!");
+						reiniciar();
+					}
+				}
+			}
+
+			function reiniciar() {
+				novoJogo = confirm("JOGAR NOVAMENTE?");
+
+				if(novoJogo == true){
+					alert("OKAY :D");
+					location.reload(true);
+				}else{
+					alert("SEE YA o/");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<h1>A Simple Tic-Tac-Toe</h1>
+			<p>Where I learned that JavaScript casing and canvases without height and width can cost you hours.</p>
+		</header>
+
+		<div class="wrapper">
+			<div class="main">
+				<!--FIRST ROW-->
+				<canvas id="cvs1" height=100 width=100 onclick="casaClicada(1)"></canvas>
+				<canvas id="cvs2" height=100 width=100 onclick="casaClicada(2)"></canvas>
+				<canvas id="cvs3" height=100 width=100 onclick="casaClicada(3)"></canvas>
+				<br/>
+
+				<!--SECOND ROW-->
+				<canvas id="cvs4" height=100 width=100 onclick="casaClicada(4)"></canvas>
+				<canvas id="cvs5" height=100 width=100 onclick="casaClicada(5)"></canvas>
+				<canvas id="cvs6" height=100 width=100 onclick="casaClicada(6)"></canvas>
+				<br/>
+
+				<!--THIRD ROW-->
+				<canvas id="cvs7" height=100 width=100 onclick="casaClicada(7)"></canvas>
+				<canvas id="cvs8" height=100 width=100 onclick="casaClicada(8)"></canvas>
+				<canvas id="cvs9" height=100 width=100 onclick="casaClicada(9)"></canvas>
+				<br/>
+			</div>
+		</div>
+
+		<footer>
+			<ul>
+				<li><a href="https://github.com/psuchoj" target="_blank"><i class="fa fa-github-alt fa-2x"></i></a></li>
+				<li><a href="https://twitter.com/psuchoj" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+				<li><a href="https://br.linkedin.com/pub/paulo-suchoj/43/292/310" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+			</ul>
+		</footer>
+
+		<script src="js/prefixfree.js"></script>
+	</body>
+</html>

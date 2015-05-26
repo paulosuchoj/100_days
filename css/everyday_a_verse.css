@@ -1,0 +1,100 @@
+*{
+	font-family: 'Roboto', sans-serif;
+}
+
+html{
+	position: relative;
+	min-height: 100%;
+}
+
+body{
+	background-image: url(../images/swirl_pattern.png);
+	background-repeat: repeat;
+	text-align: center;
+	margin: 60px auto;
+	width: 90%;
+	max-width: 950px;
+}
+
+header{
+	position: relative;
+	margin-bottom: 60px;
+	clear:both;
+	border-bottom: 1px solid #000;
+	max-width: 950px;
+	width: 100%;
+}
+
+.wrapper{
+	width: 800px;
+	height: 200px;
+	margin: auto;
+	top: 0; bottom: 0; left: 0; right: 0;
+	display: block;
+	padding-bottom: 40px;
+	min-height: 100%;
+	position: relative;
+}
+
+#quote{
+	font-size: 1.4em;
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+
+#author{
+	float: right;
+	font-size: 0.8em;
+	margin: 2px;
+}
+
+.decorator{
+	display: block;
+	border: 0;
+	border-top: 2px solid #000;
+	height: 1px;
+	width: 800px;
+}
+
+.arrow::before{
+	display: block;
+  border-color: #000 #000 transparent #000;
+  border-style: solid;
+  border-width: 14px;
+  content: "";
+	margin-left: 50%;
+  position: absolute;
+}
+
+footer{
+	position:absolute;
+	height: 40px;
+	bottom:0;
+}
+
+footer a{
+	text-decoration: none;
+	color: #000;
+}
+
+footer p{
+	position: fixed;
+	top: 0;
+	left: 0;
+	float: left;
+	text-align: center;
+}
+
+#home{
+	margin: 0.6em;
+}
+
+#blog{
+	height: 60%;
+	margin: 0.6em;
+}
+
+.clear{
+	clear: both;
+}

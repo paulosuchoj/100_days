@@ -2,13 +2,23 @@
 <head>
 	<meta charset="utf-8">
 
+	<title>Hogwarts Houses Quiz!</title>
+	<link rel="icon" type="image/png" href="images/icons/sorting_hat.png" size="32x32">
+
 	<!--CSS-->
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!--Custom CSS-->
 	<link href="css/hogwarts_houses_quiz.css" rel="stylesheet">
 
   <!--Fonts-->
   <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+
+	<!--Scripts-->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jquery-1.11.3.js"></script>
 </head>
 
 <body>
@@ -18,103 +28,371 @@
       <p>Where I use my love of Harry Potter to create a quiz and sort people into houses</p>
       <small>Questions are taken from Buzzfeed bacause I'm lacking in creativity right now.</small>
     </div>
+
     <img src="images/sorting_hat.png">
   </header>
 
-  <div class="content">
-    <div id="quiz">
-      <h1>What Type Of Thing Are You?</h1>
-
-      <!--FIRST QUESTION-->
-      <ul class="quiz-step step1 current">
-        <li class="question">
-          <div class="question-wrap">
-            <h2>Question #1: Pick a candy.</h2>
-          </div>
-        </li>
-        <li class="quiz-answer lowes-value" data-quizIndex="1">
-          <div class="answer-wrap">
-              <p class="answer-text">Chocolate Frogs</p>
-          </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-          <div class="answer-wrap">
+  <div id="quiz">
+    <h1>To which Hogwarts House do you belong?</h1>
+		<p>Let's find out</p>
+		<!--
+		Indexes stand for: 1 - Gryffindor
+											 2 - Slytherin
+											 3 - Ravenclaw
+											 4 - Hufflepuff
+		Order will be shuffled in subsequent questions
+		-->
+    <!--1ST QUESTION-->
+    <ul class="quiz-step step1 current">
+      <li class="question">
+        <div class="question-wrap">
+          <h2>Question #1: Pick a candy.</h2>
+        </div>
+      </li>
+      <li class="quiz-answer lowes-value" data-quizIndex="1">
+        <div class="answer-wrap">
             <p class="answer-text">Bertie Bott's Every Flavour Beans</p>
-          </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="3">
-          <div class="answer-wrap">
-              <p class="answer-text">Honeydukes Sherbet Lemons</p>
-          </div>
-        </li>
-        <li class="quiz-answer highest-value" data-quizIndex="4">
-          <div class="answer-wrap">
-            <p class="answer-text">Fizzy Wizzy</p>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </li>
+      <li class="quiz-answer low-value" data-quizIndex="2">
+        <div class="answer-wrap">
+          <p class="answer-text">Honeydukes Sherbet Lemons</p>
+        </div>
+      </li>
+      <li class="quiz-answer high-value" data-quizIndex="3">
+        <div class="answer-wrap">
+            <p class="answer-text">Chocolate Frogs</p>
+        </div>
+      </li>
+      <li class="quiz-answer highest-value" data-quizIndex="4">
+        <div class="answer-wrap">
+          <p class="answer-text">Fizzy Wizzy</p>
+        </div>
+      </li>
+    </ul>
 
-      <!--SECOND QUESTION-->
-      <ul class="quiz-step step2">
-        <li class="question">
-          <div class="question-wrap">
-            <h2>Question #2: And a pet.</h2>
-          </div>
-        </li>
-        <li class="quiz-answer lowes-value" data-quizIndex="1">
-          <div class="answer-wrap">
-              <p class="answer-text">Lizard</p>
-          </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-          <div class="answer-wrap">
-            <p class="answer-text">Dog</p>
-          </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="3">
-          <div class="answer-wrap">
-              <p class="answer-text">Cat</p>
-          </div>
-        </li>
-        <li class="quiz-answer highest-value" data-quizIndex="4">
-          <div class="answer-wrap">
+    <!--2ND QUESTION-->
+    <ul class="quiz-step step2">
+      <li class="question">
+        <div class="question-wrap">
+          <h2>Question #2: And a pet.</h2>
+        </div>
+      </li>
+      <li class="quiz-answer lowes-value" data-quizIndex="2">
+        <div class="answer-wrap">
+            <p class="answer-text">Lizard</p>
+        </div>
+      </li>
+      <li class="quiz-answer low-value" data-quizIndex="1">
+        <div class="answer-wrap">
+          <p class="answer-text">Dog</p>
+        </div>
+      </li>
+      <li class="quiz-answer high-value" data-quizIndex="4">
+        <div class="answer-wrap">
             <p class="answer-text">Ferret</p>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </li>
+      <li class="quiz-answer highest-value" data-quizIndex="3">
+        <div class="answer-wrap">
+          <p class="answer-text">Cat</p>
+        </div>
+      </li>
+    </ul>
 
-      <!--THIRD QUESTION-->
-      <ul class="quiz-step step3">
-        <li class="question">
-          <div class="question-wrap">
-            <h2>Question #3: A subject...</h2>
-          </div>
-        </li>
-        <li class="quiz-answer lowes-value" data-quizIndex="1">
-          <div class="answer-wrap">
-              <p class="answer-text">Lizard</p>
-          </div>
-        </li>
-        <li class="quiz-answer low-value" data-quizIndex="2">
-          <div class="answer-wrap">
-            <p class="answer-text">Dog</p>
-          </div>
-        </li>
-        <li class="quiz-answer high-value" data-quizIndex="3">
-          <div class="answer-wrap">
-              <p class="answer-text">Cat</p>
-          </div>
-        </li>
-        <li class="quiz-answer highest-value" data-quizIndex="4">
-          <div class="answer-wrap">
-            <p class="answer-text">Ferret</p>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <!--3RD QUESTION-->
+    <ul class="quiz-step step3">
+      <li class="question">
+        <div class="question-wrap">
+          <h2>Question #3: A subject...</h2>
+        </div>
+      </li>
+      <li class="quiz-answer lowes-value" data-quizIndex="4">
+        <div class="answer-wrap">
+            <p class="answer-text">History Of Magic</p>
+        </div>
+      </li>
+      <li class="quiz-answer low-value" data-quizIndex="3">
+        <div class="answer-wrap">
+          <p class="answer-text">Transfiguration</p>
+        </div>
+      </li>
+      <li class="quiz-answer high-value" data-quizIndex="1">
+        <div class="answer-wrap">
+            <p class="answer-text">Charms</p>
+        </div>
+      </li>
+      <li class="quiz-answer highest-value" data-quizIndex="2">
+        <div class="answer-wrap">
+          <p class="answer-text">Potions</p>
+        </div>
+      </li>
+    </ul>
+
+		<!--4TH QUESTION-->
+    <ul class="quiz-step step4">
+      <li class="question">
+        <div class="question-wrap">
+          <h2>Question #4: If your friends cheated on a test you would...</h2>
+        </div>
+      </li>
+      <li class="quiz-answer lowes-value" data-quizIndex="3">
+        <div class="answer-wrap">
+            <p class="answer-text">Offer to help them study for the next one</p>
+        </div>
+      </li>
+      <li class="quiz-answer low-value" data-quizIndex="1">
+        <div class="answer-wrap">
+          <p class="answer-text">Offer to let them cheat off of your test next time</p>
+        </div>
+      </li>
+      <li class="quiz-answer high-value" data-quizIndex="2">
+        <div class="answer-wrap">
+            <p class="answer-text">Tell in them, that's not fair</p>
+        </div>
+      </li>
+      <li class="quiz-answer highest-value" data-quizIndex="4">
+        <div class="answer-wrap">
+          <p class="answer-text">Ignore it</p>
+        </div>
+      </li>
+    </ul>
+
+		<!--5TH QUESTION-->
+		<ul class="quiz-step step5">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #5: Pick a color</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="4">
+				<div class="answer-wrap">
+						<p class="answer-text">Pink</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="3">
+				<div class="answer-wrap">
+					<p class="answer-text">Purple</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="2">
+				<div class="answer-wrap">
+						<p class="answer-text">White</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="1">
+				<div class="answer-wrap">
+					<p class="answer-text">Orange</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--6TH QUESTION-->
+		<ul class="quiz-step step6">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #6: If you could only do one thing for the rest of your life you would...</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="2">
+				<div class="answer-wrap">
+						<p class="answer-text">Start your own company</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="1">
+				<div class="answer-wrap">
+					<p class="answer-text">Explore the world</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="3">
+				<div class="answer-wrap">
+						<p class="answer-text">Stay in school forever. You can never learn too much, right?</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="4">
+				<div class="answer-wrap">
+					<p class="answer-text">Start a family ASAP</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--7TH QUESTION-->
+		<ul class="quiz-step step7">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #7: Pick a red head</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="4">
+				<div class="answer-wrap">
+						<p class="answer-text">Arthur</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="2">
+				<div class="answer-wrap">
+					<p class="answer-text">Fred</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="1">
+				<div class="answer-wrap">
+						<p class="answer-text">Ron</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="3">
+				<div class="answer-wrap">
+					<p class="answer-text">Ginny</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--8TH QUESTION-->
+		<ul class="quiz-step step8">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #8: If you were going on vacation you would go to...</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="2">
+				<div class="answer-wrap">
+						<p class="answer-text">London</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="1">
+				<div class="answer-wrap">
+					<p class="answer-text">The wilderness</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="4">
+				<div class="answer-wrap">
+						<p class="answer-text">Home to my family</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="3">
+				<div class="answer-wrap">
+					<p class="answer-text">The beach</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--9TH QUESTION-->
+		<ul class="quiz-step step9">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #9: Your patronus would be a...</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="4">
+				<div class="answer-wrap">
+						<p class="answer-text">Hedhehog</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="3">
+				<div class="answer-wrap">
+					<p class="answer-text">Fox</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="2">
+				<div class="answer-wrap">
+						<p class="answer-text">Panther</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="1">
+				<div class="answer-wrap">
+					<p class="answer-text">Cat</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--10TH QUESTION-->
+		<ul class="quiz-step step10">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #10: A chaser on your Quidditch team drops the Quaffle and there's no way they will be able to recover it. You...</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="3">
+				<div class="answer-wrap">
+						<p class="answer-text">Get frustrated and yell at them</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="4">
+				<div class="answer-wrap">
+					<p class="answer-text">Let it go. You win some, you lose some</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="2">
+				<div class="answer-wrap">
+						<p class="answer-text">Be passive aggressive about it after the game</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="1">
+				<div class="answer-wrap">
+					<p class="answer-text">Try to fight the referee on it</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--11TH QUESTION-->
+		<ul class="quiz-step step11">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #11: On a saturday night you can be found...</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="3">
+				<div class="answer-wrap">
+						<p class="answer-text">At the movies or a concert</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="1">
+				<div class="answer-wrap">
+					<p class="answer-text">Staying in with friends</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="2">
+				<div class="answer-wrap">
+						<p class="answer-text">Bar hopping</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="4">
+				<div class="answer-wrap">
+					<p class="answer-text">Sleeping</p>
+				</div>
+			</li>
+		</ul>
+
+		<!--12TH QUESTION-->
+		<ul class="quiz-step step12">
+			<li class="question">
+				<div class="question-wrap">
+					<h2>Question #12: Your mom sends you a howler for something you didn't do wrong. You...</h2>
+				</div>
+			</li>
+			<li class="quiz-answer lowes-value" data-quizIndex="1">
+				<div class="answer-wrap">
+						<p class="answer-text">Feel bad that you upset her</p>
+				</div>
+			</li>
+			<li class="quiz-answer low-value" data-quizIndex="4">
+				<div class="answer-wrap">
+					<p class="answer-text">Are embarassed that everyone heard but don't really care that she's mad</p>
+				</div>
+			</li>
+			<li class="quiz-answer high-value" data-quizIndex="3">
+				<div class="answer-wrap">
+						<p class="answer-text">Write her back to let her know she's wrong</p>
+				</div>
+			</li>
+			<li class="quiz-answer highest-value" data-quizIndex="2">
+				<div class="answer-wrap">
+					<p class="answer-text">Say she's crazy and you're obviously right</p>
+				</div>
+			</li>
+		</ul>
   </div>
 
   <footer>
-
+		<small>Hogwarts Houses Crests designed by <a href="http://geijvontaen.deviantart.com/">Geijvon Taen</a></small>
+		<small>Based on a Pen by <a href="http://codepen.io/jannypie/">Jan Dennison</a></small>
   </footer>
 </body>

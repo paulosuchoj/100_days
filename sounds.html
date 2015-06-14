@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<head>
+  <meta charset="utf-8">
+  <title>Nature Sounds</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/sounds.css">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+  <!-- JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1 class="page-header">Sounds Of Nature... <i class="fa fa-leaf"></i></h1>
+      <p>Click one and it'll keep playing on a loop until clicked again.</p>
+      <div class="playing"><p>Now Playing: </p><p id="now"></p></div>
+    </header>
+
+    <!--
+    =========================================
+    PRIMEIRA LINHA
+    =========================================
+    -->
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="seaSound" src="sounds/sea.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('sea')">
+          <img src="images/sea.png">
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="parkSound" src="sounds/park.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('park')">
+          <img src="images/park.png">
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="fireSound" src="sounds/fire.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('fire')">
+          <img src="images/fire.png">
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="snowSound" src="sounds/snow.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('snow')">
+          <img src="images/snow.png">
+        </a>
+      </div>
+    </div>
+
+    <!--
+    =========================================
+    SEGUNDA LINHA
+    =========================================
+    -->
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="forestSound" src="sounds/forest.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('forest')">
+          <img src="images/forest.png">
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="underwaterSound" src="sounds/underwater.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('underwater')">
+          <img src="images/underwater.png">
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="rainSound" src="sounds/rain.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('rain')">
+          <img src="images/rain.png">
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <audio id="thunderSound" src="sounds/thunder.mp3" loop="loop"></audio>
+        <a class="thumbnail" onclick="playSound('thunder')">
+          <img src="images/thunder.png">
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>
+            <a href="index.html" target="_blank"><i class="fa fa-home fa-2x"></i></i></a>
+          </p>
+
+          <p><div>Icons made by <a href="http://www.flaticon.com/authors/icomoon" title="Icomoon">Icomoon</a>, <a href="http://www.flaticon.com/authors/ocha" title="OCHA">OCHA</a>, <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div></p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      var soundPlaying = false;
+
+      function playSound(sound) {
+        var soundFile = document.getElementById(sound + "Sound");
+
+        if(soundPlaying === false){
+          soundPlaying = true;
+          soundFile.play();
+        }else{
+          soundPlaying = false;
+          soundFile.pause();
+        }
+
+        switch(sound){
+          case "sea":
+            document.getElementById("now").innerHTML = "Sea";
+            break;
+          case "park":
+            document.getElementById("now").innerHTML = "Park";
+            break;
+          case "fire":
+            document.getElementById("now").innerHTML = "Fire";
+            break;
+          case "snow":
+            document.getElementById("now").innerHTML = "Snow";
+            break;
+          case "forest":
+            document.getElementById("now").innerHTML = "Forest";
+            break;
+          case "underwater":
+            document.getElementById("now").innerHTML = "underwater";
+            break;
+          case "rain":
+            document.getElementById("now").innerHTML = "Rain";
+            break;
+          case "thunder":
+            document.getElementById("now").innerHTML = "Thunder";
+            break;
+          default:
+            break;
+        }
+      };
+    </script>
+  </div>
+</body>

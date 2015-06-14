@@ -1,3 +1,12 @@
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
 html{
 	position: relative;
 	min-height: 100%;
@@ -31,7 +40,7 @@ body::before{
 }
 
 header{
-	position: fixed;
+	position: relative;
 	clear:both;
 	max-width: 950px;
 	width: 90%;
@@ -45,8 +54,14 @@ header{
 }
 
 .desc{
-  display: inline-block;
-  float: left;
+	display: inline-block;
+	color: #FFF;
+	margin-top: 20px;
+	font-size: 1.4em;
+	font-weight: 100;
+	padding: 6px;
+	border-radius: 3px;
+	margin: 2em;
 }
 
 .desc h1, p, small{
@@ -60,34 +75,35 @@ header img{
   float: right;
 }
 
-/*
-.content:before {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: -1;
-
-  display: block;
-  background-image: url('../images/hogwarts_castle.jpg');
-  background-size: contain;
-  background-repeat: repeat;
-  width: 100%;
-  height: 100%;
-
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+.quiz{
+	min-height: 100%;
+	margin-bottom: 20px;
+	padding-bottom: 40px;
+	position: relative;
 }
 
-.content {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+footer{
+	position:absolute;
+	border-top: 1px solid #000;
+	width: 100%;
+	height: 40px;
+	bottom:0;
 }
-*/
+
+footer a{
+	text-decoration: none;
+	color: #000;
+}
+
+footer ul{
+	list-style: none;
+}
+
+footer ul li{
+	display: inline-block;
+	padding: 6px;
+}
+
+footer a:hover{
+	text-shadow: 1px 1px 3px #000;
+}

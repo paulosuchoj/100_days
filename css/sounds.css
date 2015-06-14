@@ -1,0 +1,47 @@
+body{
+  background-image: url(../images/arches_pattern.png);
+  background-repeat: repeat;
+  font-family: 'Droid Serif', serif;
+}
+
+header{
+	position: relative;
+	margin-bottom: 60px;
+	clear: both;
+	border-bottom: 1px solid #000;
+}
+
+header h1{
+  text-transform: uppercase;
+}
+
+header p{
+  font-size: 1.4em;
+}
+
+.playing p{
+  display: inline;
+}
+
+#now{
+  display: inline;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover{
+	text-shadow: 1px 1px 3px #000;
+  color: #000;
+}
+
+footer{
+  margin: 50px 0;
+}
+
+footer p a{
+	display: inline-block;
+	padding: 6px;
+}
